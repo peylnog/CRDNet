@@ -29,8 +29,8 @@ parser.add_argument("--num_workers", type=int, default=4, help="number of worker
 parser.add_argument("--save_root", default="../checkpoints", type=str, help="path to save networks")
 parser.add_argument("--load_root", default="../checkpoints", type=str, help="path to load networks")
 
-parser.add_argument("--train_data_root", default="/home/psdz/桌面/Derain_Data/train", type=str, help="train data root")
-parser.add_argument("--test_data_root", default="/home/psdz/桌面/Derain_Data/test", type=str, help="test data root")
+parser.add_argument("--train", default="/home/psdz/桌面/Derain_Data/train", type=str, help="train data root")
+parser.add_argument("--test", default="/home/psdz/桌面/Derain_Data/test", type=str, help="test data root")
 
 
 
@@ -50,8 +50,8 @@ def main():
     train_print_freq = opt.train_print_freq
 
     # path
-    train_data_root = opt.train_data_root
-    test_data_root = opt.test_data_root
+    train_data_root = opt.train
+    test_data_root = opt.test
     save_root = opt.save_root
     load_root = opt.load_root
 

@@ -15,8 +15,8 @@ parser.add_argument("--gpus", type=int, default=1, help="nums of gpu to use")
 parser.add_argument("--num_workers", type=int, default=4, help="number of workers")
 
 # checkpoints and dataset path
-parser.add_argument("--load_root", default="../checkpoints", type=str, help="path to load networks")
-parser.add_argument("--test_data_root", default="/home/psdz/桌面/Derain_Data/test", type=str, help="test data root")
+parser.add_argument("--load", default="../checkpoints", type=str, help="path to load networks")
+parser.add_argument("--test", default="/home/psdz/桌面/Derain_Data/test", type=str, help="test data root")
 parser.add_argument("--save_image_root", default="../result", type=str, help="save image root")
 parser.add_argument("--save_image", default=True, type=bool, help="save image or not")
 
@@ -29,8 +29,8 @@ def main():
 
 
     num_works = opt.num_workers
-    test_data_root = opt.test_data_root
-    load_root = opt.load_root
+    test_data_root = opt.test
+    load_root = opt.load
     save_image = opt.save_image
     save_image_root = opt.save_image_root
     Use_cuda = opt.cuda

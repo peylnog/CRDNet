@@ -6,10 +6,10 @@
 
 * CRDNet: 
 ```bash
-python train.py --cuda --gpus=4 --train=/path/to/train --test=/path/to/test --lr=0.0001 --step=1000 --n 2
+python derain_train.py --cuda --gpus=4 --train=/path/to/train --test=/path/to/test --lr=0.0001 --step=1000 --n 2
 ```
 
 ### Test
 ```bash
-python test.py --cuda --checkpoints=/path/to/checkpoint --test=/path/to/testimages
+python derain_test.py --cuda --load=/path/to/checkpoint --test=/path/to/testimages
 ```

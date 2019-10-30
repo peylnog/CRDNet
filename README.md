@@ -2,7 +2,7 @@
 * Weights：
 <p>&emsp;&emsp;CRNNet weights are released.</p>
 
-<p>&emsp;&emsp;CRDNet：https://drive.google.com/open?id=1H9CqWKZZwLn8V-nOWjCopyBRzKhZDTvo</p>
+<p>&emsp;&emsp;CRDNet：https://pan.baidu.com/s/15z0my6Nik-wVrVRpIRp-xw    Key: 9anq 
 
 * CRDNet: 
 ```bash

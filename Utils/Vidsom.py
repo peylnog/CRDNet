@@ -108,12 +108,12 @@ def get_psnr_ssim2(input_img , compared_img):
 
 def display_Psnr_Ssim( Psnr_list , Ssim_list ,v_epoch):
 
-    Psnr_list = torch.tensor(Psnr_list)
-    Ssim_list = torch.tensor(Ssim_list)
+    Psnr_list = torch.tensor([Psnr_list])
+    Ssim_list = torch.tensor([Ssim_list])
 
     x = torch.tensor([v_epoch])
 
-    loss_vis = visdom.Visdom(env='derain')
+    loss_vis = visdom.Visdom(env='ssim_psnr')
 
     loss_vis.line(X=x, Y=Psnr_list, win="Psnr", update='append', \
                   name='train_loss',opts={'title':"Derain_2019_test",'xlabel': 'epoch' , 'ylabel':'Psnr' })

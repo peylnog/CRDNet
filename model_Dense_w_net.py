@@ -1,11 +1,9 @@
 from networks import *
 from Utils.utils import *
 import torch
-
-
-
+from torch.nn.functional import interpolate as Inter
 class Rain_steaks_with_BG(nn.Module):
-    '''get rain steaks with background info from RGBrain_img
+    '''get rain steaks with background from RGBrain_img
     return img-----512 512 3*3    '''
     def __init__(self):
         super(Rain_steaks_with_BG, self).__init__()
@@ -42,6 +40,12 @@ class Rain_steaks_with_BG(nn.Module):
         self.conv_5_2 = conv_blocks_size_5(8,16,True)
         weights_init_xavier(self.conv_5_2)
 
+        # self.conv_5_3 = conv_blocks_size_5(16, 32, False)  # 64
+        # weights_init_xavier(self.conv_5_3)
+
+
+
+
 
 
         self.conv_7_0 = conv_blocks_size_7(in_dim=3, out_dim=4, Use_pool=True)  # 256
@@ -53,6 +57,8 @@ class Rain_steaks_with_BG(nn.Module):
         self.conv_7_2 = conv_blocks_size_7(8,16, True)  # 64
         weights_init_xavier(self.conv_7_2)
 
+        # self.conv_7_3 = conv_blocks_size_7(16, 32, False)  # 32
+        # weights_init_xavier(self.conv_7_3)
 
 
 
@@ -67,7 +73,9 @@ class Rain_steaks_with_BG(nn.Module):
 
         input_5 = x
         input_5 = self.conv_5_0(input_5)
+        # input_5 = self.Dropout(input_5)
         input_5 = self.conv_5_1(input_5)
+        # input_5 = self.Dropout(input_5)
         input_5 = self.conv_5_2(input_5)
         input_5 = self.deconv_3_0(input_5)
         input_5 = self.deconv_3_1(input_5)
@@ -91,8 +99,8 @@ class Rain_steaks_with_BG(nn.Module):
 
 class Low_BackGround(nn.Module):
     '''get low background from RGB rain_Img
-    in order to move rain steaks ,wo decide to insert a residual img
-    to make CNN do his jod better  input 512 512 3 retrun 512 512 4'''
+    in order to move rain steaks ,wo decide to insert some residual img
+    to make CNN do his jod better  input 512 512 3 retrun 32 32 64'''
     def __init__(self):
         super(Low_BackGround, self).__init__()
         self.encode1 = conv_blocks_size_3(in_dim=4 , out_dim=8 ,Use_pool=True)  #256

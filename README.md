@@ -1,15 +1,16 @@
-### Train
-* Weights：
-<p>&emsp;&emsp;CRNNet weights are released.</p>
 
-<p>&emsp;&emsp;CRDNet：https://pan.baidu.com/s/15z0my6Nik-wVrVRpIRp-xw    Key: 9anq 
+## Prerequisites:
+1. Linux
+2. Python 3
+3. CPU or NVIDIA GPU + CUDA CuDNN (CUDA 9.0)
 
-* CRDNet: 
-```bash
-python derain_train.py --cuda --gpus=4 --train=/path/to/train --test=/path/to/test --lr=0.0001 --step=1000 --n 2
-```
 
-### Test
-```bash
-python derain_test.py --cuda --load=/path/to/checkpoint --test=/path/to/testimages
-```
+#train
+
+python derain_train.py  
+
+#test
+
+python derain_test.py
+
+ps(make sure data root is right)

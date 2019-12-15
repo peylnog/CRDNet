@@ -83,9 +83,9 @@ def conv_block_size_3_without_bn(in_dim,out_dim, Use_pool = False ,Maxpool = Tru
     return layer
 
 
-def conv_blocks_size_5(in_dim,out_dim, Use_pool = False ,Maxpool = True ,bn = True):
+def conv_blocks_size3_dilation2(in_dim,out_dim, Use_pool = False ,Maxpool = True ,bn = True):
     layer = nn.Sequential()
-    layer.add_module( "conv1",nn.Conv2d(in_dim ,out_dim , kernel_size= 5, padding= 2, stride=1))
+    layer.add_module( "conv1",nn.Conv2d(in_dim ,out_dim , kernel_size= 3, padding= 2, stride=1 , dilation= 2 ))
 
     if bn:
         layer.add_module('bn' ,nn.BatchNorm2d(out_dim))
@@ -94,7 +94,7 @@ def conv_blocks_size_5(in_dim,out_dim, Use_pool = False ,Maxpool = True ,bn = Tr
 
 
 
-    layer.add_module( "conv2",nn.Conv2d(out_dim ,out_dim , kernel_size= 5, padding= 2, stride=1))
+    layer.add_module( "conv2",nn.Conv2d(out_dim ,out_dim , kernel_size= 3, padding= 2, stride=1, dilation= 2))
     # layer.add_module('relu', nn.ReLU(False))
 
     if bn:
@@ -111,15 +111,15 @@ def conv_blocks_size_5(in_dim,out_dim, Use_pool = False ,Maxpool = True ,bn = Tr
 
 
 
-def conv_blocks_size_7(in_dim,out_dim, Use_pool = False ,Maxpool = True , bn = True):
+def conv_blocks_size3_dilation3(in_dim,out_dim, Use_pool = False ,Maxpool = True , bn = True):
     layer = nn.Sequential()
-    layer.add_module( "conv1",nn.Conv2d(in_dim ,out_dim , kernel_size= 7 , padding= 3, stride=1))
+    layer.add_module( "conv1",nn.Conv2d(in_dim ,out_dim , kernel_size= 3 , padding= 3, stride=1 , dilation= 3))
     if bn:
         layer.add_module('bn', nn.BatchNorm2d(out_dim))
     layer.add_module('relu', nn.ReLU(False))
 
 
-    layer.add_module( "conv2",nn.Conv2d(out_dim ,out_dim , kernel_size= 7 , padding= 3, stride=1))
+    layer.add_module( "conv2",nn.Conv2d(out_dim ,out_dim , kernel_size= 3 , padding= 3, stride=1, dilation= 3))
     if bn:
         layer.add_module('bn', nn.BatchNorm2d(out_dim))
     layer.add_module('relu', nn.ReLU(False))

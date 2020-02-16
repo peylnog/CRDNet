@@ -14,13 +14,7 @@
 3. visdom : `pip install visdom`
 
 
-## 1. Weights
-
- <p>&emsp;&emsp;CRDNet：https://pan.baidu.com/s/1tIMv2snc0E93Btu9YA5TIw  密码:ncf3 </p>
-
-```python
-python test.py
-```
+## 1. Demo
 
 ## Train
 *  Weights

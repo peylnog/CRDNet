@@ -1,6 +1,6 @@
 # CRDNet
 
-## 0. Installation
+## Installation
 
 **Framework**
 1. Python 3.7
@@ -14,20 +14,28 @@
 3. visdom : `pip install visdom`
 
 
-## 1. Demo
-
 ## Train
-*  Weights
+Download Weights  [BaiDuYunLink](https://pan.baidu.com/s/1tIMv2snc0E93Btu9YA5TIw)  passwd:ncf3 
 
-<p>&emsp;&emsp;CRDNet：https://pan.baidu.com/s/1tIMv2snc0E93Btu9YA5TIw  密码:ncf3 </p>
-
-```bash
-python train.py 
 ```
-
+python3.7 derian.py 
+```
 
 ## Test
-
-```bash
-python test.py ps(make sure data root is right)
 ```
+python3.7 test.py
+ps:make sure data root is right
+```
+
+## Citation:
+[Cumulative Rain Density Sensing Network for Single Image Derain](https://ieeexplore.ieee.org/document/9001158)
+```
+    InProceedings{
+    author = {L. Peng, A. Jiang, Q. Yi and M. Wang},
+    title = {Cumulative Rain Density Sensing Network for Single Image Derain(CRDNet)},
+    booktitle = {IEEE Signal Processing Letters(SPL)},
+    month = {February},
+    year = {2020}
+    }
+```
+

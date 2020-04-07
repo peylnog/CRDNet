@@ -7,12 +7,12 @@ class DefaultConfig(object):
 
 
     #path
-    train_data_root = '/home/ws/Desktop/PL/Derain_Data/train'
-    test_data_root = '/home/ws/Desktop/PL/Derain_Data/test'
-    env = "derain_test"
-    save_root = "/home/ws/Desktop/PL/Derain_rework_dialate/derain_code_with_weights/checkpoints/running"
-    load_root = "/home/psdz/桌面/0.8_derain_30.87-0.866/checkpoints/30.70_0.88"
-    save_image_root = "/home/psdz/桌面/0.8_derain_30.87-0.866/result_dataset1"
+    train_data_root = "" 
+    test_data_root =  ""
+    env = "Dearin 2019" 
+    save_root = ""         #save checkpoints root
+    load_root = ""         #load checkpoints root 
+    save_image_root = ""
 
     #parameters
 
@@ -20,7 +20,7 @@ class DefaultConfig(object):
     num_workers = 4# how many workers for loading data
     train_epoch = 1000
 
-    Adam_lr_refine = 5e-5     # initial learning rate
+    Adam_lr_refine = 1e-4     # initial learning rate
     Adam_lr_classfy = 3e-6
 
     SGD_lr = 1e-4

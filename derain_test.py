@@ -1,5 +1,5 @@
 from MyDataset.Datasets import  *
-from model_w_net import *
+from model_Dense_w_net_modelfy_dialate import *
 from Utils.Vidsom import *
 from torch.utils import data as Data
 from config import DefaultConfig
@@ -16,24 +16,24 @@ def test():
 
 
     # path
-    test_data_root = opt.test_data_root
-    load_root = opt.load_root
-    save_image_root = opt.save_image_root
+    test_data_root = opt.test_data_root       #test data root 
+    load_root = opt.load_root                 #load weights root 
+    save_image_root = opt.save_image_root     #save image root 
 
     stage1 = Rain_steaks_with_BG()
-    weights = torch.load(load_root + '/stage1/'+'241.pth')
+    weights = torch.load(load_root + '/stage1/'+'426.pth')
     stage1.load_state_dict(weights['state_dict'])
 
     classfy = Classfication()
-    weights = torch.load(load_root + '/classfy/'+'241.pth')
+    weights = torch.load(load_root + '/classfy/'+'426.pth')
     classfy.load_state_dict(weights['state_dict'])
 
     stage2 = Low_BackGround()
-    weights = torch.load(load_root + '/stage2/' + '241.pth')
+    weights = torch.load(load_root + '/stage2/' + '426.pth')
     stage2.load_state_dict(weights['state_dict'])
 
     derain = Derain()
-    weights = torch.load(load_root + '/derain/' + '241.pth')
+    weights = torch.load(load_root + '/derain/' + '426.pth')
     derain.load_state_dict(weights['state_dict'])
 
     #Dataloader
@@ -54,9 +54,12 @@ def test():
 
     stage1.cuda()
     stage2.cuda()
+    classfy.cuda()
     derain.cuda()
+
     stage1.eval()
     stage2.eval()
+    classfy.eval()
     derain.eval()
 
     test_Psnr_sum = 0.0

@@ -18,12 +18,12 @@
 Download Weights  [BaiDuYunLink](https://pan.baidu.com/s/1tIMv2snc0E93Btu9YA5TIw)  passwd:ncf3 
 
 ```
-python3.7 derian.py 
+python3.7 derain.py 
 ```
 
 ## Test
 ```
-python3.7 test.py
+python3.7 derain_test.py
 ps:make sure data root is right
 ```
 
@@ -37,5 +37,7 @@ ps:make sure data root is right
     month = {February},
     year = {2020}
     }
+    
+    IF it helps you , please quotes us , thanks a lot 
 ```
 

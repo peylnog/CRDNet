@@ -32,7 +32,7 @@ def test():
     weights = torch.load(load_root + '/stage2/' + '426.pth')
     stage2.load_state_dict(weights['state_dict'])
 
-    derain = Derain()
+    derain = Refine()
     weights = torch.load(load_root + '/derain/' + '426.pth')
     derain.load_state_dict(weights['state_dict'])
 
